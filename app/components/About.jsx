@@ -143,16 +143,16 @@ const About = () => {
           <h2 style={aboutStyles.text} className='text-center text-5xl font-mozilla-headline font-medium mb-4'>About me</h2>
         </div>
 
-        <div className='flex w-full flex-col lg:flex-row items-center lg:items-start md:gap-20  xl:gap-20 xl:ml-24'>
+        <div className='flex w-full flex-col lg:flex-row items-center justify-center gap-20 max-w-6xl mx-auto'>
             <div className={`w-64 sm:w-80 rounded-3xl max-w-none transition-all duration-1000 delay-200 ${
               animate ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-10 scale-95'
             }`}>
                 <Image src={assets.user_image} alt='' className='w-full rounded-3xl'/>
             </div>
-            <div className='flex-1 my-8'>
+            <div className='flex-1 my-8 max-w-2xl'>
                 <p 
                   style={aboutStyles.text} 
-                  className={`mb-10 max-w-2xl font-mozilla-text text-center md:text-left transition-all duration-1000 delay-300 ${
+                  className={`mb-10 font-mozilla-text text-center lg:text-left transition-all duration-1000 delay-300 ${
                     animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                 >

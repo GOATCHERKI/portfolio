@@ -19,7 +19,11 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     // Always use dark theme for loading screen
     setIsDark(true)
 
-    // Simulate loading progress
+    // Simulate loading progress with smoother animation
+    const duration = 3000 // 3 seconds total
+    const steps = 100
+    const stepDuration = duration / steps
+    
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -29,9 +33,11 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           }, 500)
           return 100
         }
-        return prev + Math.random() * 15 + 5
+        // Smooth increment to ensure we reach 100%
+        const increment = 100 / steps
+        return Math.min(prev + increment, 100)
       })
-    }, 200)
+    }, stepDuration)
 
     return () => clearInterval(interval)
   }, [onLoadingComplete])
