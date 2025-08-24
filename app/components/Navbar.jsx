@@ -15,6 +15,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isDark, setIsDark] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // Styles for light and dark mode text colors
     const navStyles = {
@@ -93,10 +94,12 @@ const Navbar = () => {
 
     const openMenu = () => {
         sideMenuRef.current.style.transform = 'translateX(-16rem)'
+        setIsMenuOpen(true)
     }
     
     const closeMenu = () => {
         sideMenuRef.current.style.transform = 'translateX(16rem)'
+        setIsMenuOpen(false)
     }
 
     const toggleTheme = () => {
@@ -115,7 +118,7 @@ const Navbar = () => {
         <>
             {/* Mobile navbar with white 60% opacity background */}
             <nav className={`
-                w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-20 transition-all duration-300
+                w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-100 transition-all duration-300
                 ${isMobile ? 'bg-white/50 dark:bg-white/10 backdrop-blur-xl border-b border-black/10 dark:border-white/10 shadow-sm' : ''}
             `}>
                 <a href="#top" className={`mr-14 transition-all duration-300 ${isScrolled ? 'rounded-full px-5 py-2 bg-white/50 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-sm' : ''}`}>
@@ -225,14 +228,22 @@ const Navbar = () => {
                     </button>
                 </div>
 
+                {/* Mobile menu backdrop overlay */}
+                <div 
+                    className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-100 transition-opacity duration-500 ease-out ${
+                        isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}
+                    onClick={closeMenu}
+                />
+
                 {/* Enhanced Mobile menu */}
                 <div 
                     ref={sideMenuRef} 
-                    className='flex md:hidden flex-col fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition-all duration-500 ease-out'
+                    className='flex md:hidden flex-col fixed -right-64 top-0 bottom-0 w-64 z-100 h-screen transition-all duration-500 ease-out'
                     style={{
                         background: isDark 
-                            ? 'rgba(17, 24, 39, 0.95)' 
-                            : 'rgba(255, 255, 255, 0.95)',
+                            ? 'rgb(17, 24, 39)' 
+                            : 'rgb(255, 255, 255)',
                         borderLeft: isDark ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
                         boxShadow: isDark 
                             ? '-10px 0 30px rgba(0, 0, 0, 0.5)' 
