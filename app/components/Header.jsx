@@ -1092,7 +1092,7 @@ const StyledWrapper = styled.div`
   /* Tablet landscape and small desktop (990px and down) */
 @media (max-width: 990px) {
   .header-root {
-    padding-top: 100px;
+    padding-top: 120px;
     min-height: auto;
   }
 
@@ -1156,7 +1156,7 @@ const StyledWrapper = styled.div`
   /* Phone responsiveness (768px and down) */
   @media (max-width: 768px) {
  .header-root {
-    padding-top: 80px;
+    padding-top: 100px;
   }
 
   .main-content {
@@ -1315,7 +1315,7 @@ const StyledWrapper = styled.div`
   /* Very small phones (400px and below) */
   @media (max-width: 400px) {
     .header-root {
-      padding-top: 50px;
+      padding-top: 80px;
     }
 
     .main-title {

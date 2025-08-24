@@ -20,7 +20,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     setIsDark(true)
 
     // Simulate loading progress with smoother animation
-    const duration = 3000 // 3 seconds total
+    const duration = 1500 // 1.5 seconds total
     const steps = 100
     const stepDuration = duration / steps
     

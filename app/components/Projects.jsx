@@ -39,9 +39,30 @@ const Projects = () => {
     setCurrentImageIndex(0); // Reset to first image when opening new project
   };
   const closeModal = () => {
-  setSelectedProject(null);
-  setCurrentImageIndex(0); // Reset to first image when closing
-};
+    setSelectedProject(null);
+    setCurrentImageIndex(0); // Reset to first image when closing
+  };
+
+  // Add keyboard event listener for Escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && selectedProject) {
+        closeModal();
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      // Restore body scroll when modal is closed
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
 
 const titleVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -157,11 +178,11 @@ const cardVariants = {
       {/* Modal / Pop-out page */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4 md:px-0"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4 md:px-0 pt-24 sm:pt-28 md:pt-8"
           onClick={closeModal}
         >
           <motion.div
-            className={`rounded-xl w-full max-w-4xl p-8 relative shadow-xl overflow-y-auto max-h-[90vh] ${
+            className={`rounded-xl w-full max-w-4xl p-8 relative shadow-xl overflow-y-auto max-h-[80vh] sm:max-h-[85vh] md:max-h-[90vh] mt-4 md:mt-0 ${
               isDark ? 'bg-gray-800' : 'bg-white'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -171,10 +192,11 @@ const cardVariants = {
             transition={{ duration: 0.3 }}
           >
             <button
-              className={`absolute top-4 right-4 text-2xl font-bold z-10 ${
-                isDark ? 'text-gray-300' : 'text-gray-700'
+              className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-2xl font-bold z-20 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${
+                isDark ? 'text-gray-300 hover:text-gray-100' : 'text-gray-700 hover:text-gray-900'
               }`}
               onClick={closeModal}
+              aria-label="Close modal"
             >
               ×
             </button>
