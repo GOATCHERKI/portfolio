@@ -6,6 +6,7 @@
 
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -16,6 +17,7 @@ import Projects from "./components/Projects";
 import styled from 'styled-components';
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import LoadingScreen from "./components/LoadingScreen";
 
 // Styled component for the animated background
 const AnimatedBackground = styled.div`
@@ -84,6 +86,25 @@ const AnimatedBackground = styled.div`
 `;
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if this is the first visit
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    if (hasVisited) {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('hasVisited', 'true');
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <>
       <AnimatedBackground />
@@ -97,7 +118,6 @@ export default function Home() {
         <Contact />
         <Footer />
       </div>
-      
     </>
   );
 }
