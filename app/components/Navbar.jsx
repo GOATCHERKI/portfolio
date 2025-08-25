@@ -125,7 +125,7 @@ const Navbar = () => {
                     <Image src={isDark ? assets.logo_dark : assets.logo} className='w-28 cursor-pointer' alt=""/>
                 </a>
 
-                <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-6 py-2 bg-white/50 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-sm'>
+                <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-6 py-2 bg-white/50 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-sm absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform'>
                     <li>
                         <a 
                             className={`font-mozilla-headline cursor-pointer transition-all duration-300 hover:scale-110 hover:translate-y-[-2px] relative group ${
