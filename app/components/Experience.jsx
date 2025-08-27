@@ -1,7 +1,5 @@
-/**
- * Copyright (c) 2024 Mohamed Zakaria Cherki. All rights reserved.
- * This portfolio website is the exclusive property of Mohamed Zakaria Cherki.
- * Unauthorized copying, reproduction, or claiming of this work is prohibited.
+/*
+ * Licensed under the MIT License. See LICENSE file in the project root for full license text.
  */
 
 "use client"

@@ -5,7 +5,7 @@ Welcome to my personal portfolio website! I'm a final-year Software Engineering 
 
 ## ✨ Live Demo
 
-🌐 **[View My Portfolio](YOUR_DEPLOYMENT_URL_HERE)**
+🌐 **[View My Portfolio](https://mohamedzakariacherki.vercel.app/)**
 
 ## 🎯 About Me
 
@@ -75,7 +75,7 @@ Educational platform for basketball training.
 
 ### Installation
 
-> **⚠️ Copyright Notice:** This portfolio website and its contents are the exclusive property of Mohamed Zakaria Cherki. Unauthorized copying, reproduction, or claiming of this work as your own is strictly prohibited. This portfolio is created for the sole purpose of showcasing Mohamed Zakaria Cherki's professional work and should not be used to misrepresent anyone else's skills or experience.
+
 
 1. **Clone the repository**
    ```bash
@@ -170,24 +170,6 @@ Made with ❤️ by Mohamed Zakaria Cherki
 
 ---
 
-## 📄 Copyright & Legal
+## 📄 Copyright
 
-**Copyright © 2024 Mohamed Zakaria Cherki. All rights reserved.**
-
-This portfolio website and its contents are the exclusive property of Mohamed Zakaria Cherki. 
-
-**PERMITTED USE:**
-- Viewing and exploring the portfolio for professional evaluation
-- Learning from the code structure and implementation techniques
-- Referencing design patterns and technical approaches
-
-**PROHIBITED USE:**
-- Copying, reproducing, or redistributing this portfolio as your own work
-- Claiming ownership or authorship of this portfolio
-- Using this portfolio to represent your own skills or experience
-- Commercial use without explicit written permission
-- Modifying and redistributing without proper attribution
-
-For permission to use any part of this portfolio, please contact Mohamed Zakaria Cherki directly.
-
-**Violation of these terms may result in legal action.**
+Copyright © 2024 Mohamed Zakaria Cherki. Licensed under the MIT License.

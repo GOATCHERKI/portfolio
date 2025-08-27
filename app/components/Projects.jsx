@@ -1,7 +1,5 @@
-/**
- * Copyright (c) 2024 Mohamed Zakaria Cherki. All rights reserved.
- * This portfolio website is the exclusive property of Mohamed Zakaria Cherki.
- * Unauthorized copying, reproduction, or claiming of this work is prohibited.
+/*
+ * Licensed under the MIT License. See LICENSE file in the project root for full license text.
  */
 
 "use client"
@@ -96,7 +94,7 @@ const cardVariants = {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 my-10 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-10 gap-5">
         {workData.slice(0, visibleCount).map((project, index) => (
           <motion.div
             key={index}

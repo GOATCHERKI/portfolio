@@ -1,7 +1,5 @@
-/**
- * Copyright (c) 2024 Mohamed Zakaria Cherki. All rights reserved.
- * This portfolio website is the exclusive property of Mohamed Zakaria Cherki.
- * Unauthorized copying, reproduction, or claiming of this work is prohibited.
+/*
+ * Licensed under the MIT License. See LICENSE file in the project root for full license text.
  */
 
 "use client"
@@ -200,7 +198,7 @@ const About = () => {
         </div>
 
         {/* Enhanced Tech Stack Section */}
-        <div className={`flex flex-col items-center transition-all duration-1000 delay-700 ${
+        <div className={`flex flex-col items-center md:mb-15 transition-all duration-1000 delay-700 ${
           animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="35"></img>
