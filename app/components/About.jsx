@@ -7,6 +7,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { assets, infoList } from '../../assets/assets'
+import LogoLoop from './LogoLoop'
 
 const techIcons = [
   "https://skillicons.dev/icons?i=react&theme=dark",
@@ -34,11 +35,7 @@ const techIcons = [
 const About = () => {
   const [isDark, setIsDark] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const [slideIndex, setSlideIndex] = useState(0);
-  const [hoveredIcon, setHoveredIcon] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef(null);
-  const marqueeRef = useRef(null);
 
   useEffect(() => {
     // Check current theme
@@ -80,13 +77,6 @@ const About = () => {
       }
     };
   }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % techIcons.length);
-    }, 1200);
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array since techIcons.length is constant
 
   // Enhanced tech icon with name extraction
   const getTechName = (iconUrl) => {
@@ -198,134 +188,33 @@ const About = () => {
         </div>
 
         {/* Enhanced Tech Stack Section */}
-        <div className={`flex flex-col items-center md:mb-15 transition-all duration-1000 delay-700 ${
+        <div className={`flex flex-col items-center  transition-all duration-1000 delay-700 ${
           animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="35"></img>
-          <h2 style={aboutStyles.text} className='text-center text-3xl font-mozilla-headline font-medium'>Tech Stack</h2>
+          <h2 style={aboutStyles.text} className='text-center text-3xl font-mozilla-headline font-medium mb-8'>Tech Stack</h2>
           
-          {/* Main Sliding Container */}
-          <div className="absolute w-full max-w-[1200px] mt-8 h-50 flex items-center justify-center overflow-hidden">
-            {/* Enhanced gradient overlays */}
-            <div
-              className="absolute left-0 top-0 h-full w-20 z-20 pointer-events-none"
-              style={{
-                background: isDark
-                  ? "linear-gradient(to right, #000 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 70%, transparent 100%)"
-                  : "linear-gradient(to right, #fff 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.2) 70%, transparent 100%)"
-              }}
+          <div style={{ height: '200px', position: 'relative', overflow: 'hidden', width: '100%', maxWidth: '1200px' }}>
+            <LogoLoop
+              logos={techIcons.map((icon, index) => ({
+                src: icon,
+                alt: getTechName(icon),
+                title: getTechName(icon)
+              }))}
+              speed={80}
+              direction="left"
+              logoHeight={56}
+              gap={80}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor={isDark ? "#000000" : "#ffffff"}
+              ariaLabel="Technology stack"
             />
-            <div
-              className="absolute right-0 top-0 h-full w-20 z-20 pointer-events-none"
-              style={{
-                background: isDark
-                  ? "linear-gradient(to left, #000 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 70%, transparent 100%)"
-                  : "linear-gradient(to left, #fff 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.2) 70%, transparent 100%)"
-              }}
-            />
-
-            {/* Sliding container - fix for seamless loop */}
-            <div
-              ref={marqueeRef}
-              className="flex items-center gap-10 h-full tech-stack-marquee"
-              style={{
-                width: `${techIcons.length * 80 * 2}px`, // Set width inline in React for seamless loop
-                animation: 'smoothSlide 25s linear infinite',
-                willChange: 'transform'
-              }}
-            >
-              {[...techIcons, ...techIcons].map((icon, idx) => {
-                const techName = getTechName(icon);
-                const isHovered = hoveredIcon === idx;
-                return (
-                  <div
-                    key={`${icon}-${idx}`}
-                    className="relative flex flex-col items-center justify-center group"
-                    style={{ minWidth: '80px', height: '80px' }}
-                    onMouseEnter={() => setHoveredIcon(idx)}
-                    onMouseLeave={() => setHoveredIcon(null)}
-                  >
-                    {/* Tech icon */}
-                    <div
-                      className="relative transition-all duration-300 ease-out"
-                      style={{
-                        transform: isHovered 
-                          ? 'scale(1.2) translateY(-8px)' 
-                          : 'scale(1) translateY(0)',
-                        filter: isHovered 
-                          ? 'drop-shadow(0 6px 12px rgba(0,0,0,0.3)) brightness(1.1)' 
-                          : 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))',
-                        zIndex: isHovered ? 30 : 10
-                      }}
-                    >
-                      <img
-                        src={icon}
-                        alt={techName}
-                        className="w-14 h-14 transition-all duration-300"
-                        loading="lazy"
-                      />
-                      {/* Glowing effect on hover */}
-                      {isHovered && (
-                        <div
-                          className="absolute inset-0 rounded-lg animate-pulse"
-                          style={{
-                            background: 'radial-gradient(circle, rgba(59,130,246,0.3) 0%, transparent 70%)',
-                            filter: 'blur(6px)',
-                            zIndex: -1
-                          }}
-                        />
-                      )}
-                    </div>
-                    {/* Tech name tooltip */}
-                    <div
-                      className="absolute top-full  px-2 py-1 rounded-md text-sm font-medium whitespace-nowrap transition-all duration-300 pointer-events-none"
-                      style={{
-                        backgroundColor: isDark ? 'rgba(30, 30, 30, 0.6)' : 'rgba(255, 255, 255, 0.6)',
-                        color: isDark ? '#ffffff' : '#222222',
-                        border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                        opacity: isHovered ? 1 : 0,
-                        transform: isHovered ? 'translateY(0) scale(1)' : 'translateY(-4px) scale(0.9)',
-                        zIndex: 40
-                      }}
-                    >
-                      {techName}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
 
-        <style jsx>{`
-          @keyframes smoothSlide {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .tech-stack-marquee {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            /* width is set inline in React for seamless loop */
-          }
 
-          /* Smooth performance optimizations */
-          .tech-stack-container {
-            will-change: transform;
-            backface-visibility: hidden;
-            perspective: 1000px;
-          }
-
-          /* Custom scrollbar for better UX */
-          ::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
     </div>
   )
 }

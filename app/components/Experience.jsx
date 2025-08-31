@@ -151,7 +151,7 @@ const Experience = () => {
     <div 
       id='experience' 
       ref={sectionRef}
-      className='w-full px-[12%] py-10 mt-10 xl:mt-0 lg:mt-0 scroll-mt-20 snap-section'
+      className='w-full px-[12%] mb-10 xl:mt-0 lg:mt-0 scroll-mt-20 snap-section'
     >
       {/* Animated Header */}
       <div className={`transition-all duration-1000 transform ${
