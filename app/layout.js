@@ -1,8 +1,5 @@
-/*
- * Licensed under the MIT License. See LICENSE file in the project root for full license text.
- */
-
 import { Inter, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const mozillaText = Inter({

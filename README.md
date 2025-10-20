@@ -169,7 +169,3 @@ While this is my personal portfolio, I welcome feedback and suggestions! Feel fr
 Made with ❤️ by Mohamed Zakaria Cherki
 
 ---
-
-## 📄 Copyright
-
-Copyright © 2024 Mohamed Zakaria Cherki. Licensed under the MIT License.
