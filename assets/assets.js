@@ -196,13 +196,13 @@ export const experienceData = [
   {
     icon: assets.uni,
     title: "Bsc. in Software Engineering at Altinbas University",
-    time: "2021-2025",
+    time: "September 2021 - January 2026",
     description: "",
   },
   {
     icon: assets.web_icon,
     title: "AI and Cybersecurity Internship at EarTech Information Technology",
-    time: "august 2025 - present",
+    time: "August 2025 - October 2025",
     description: "",
   },
 ];
