@@ -73,39 +73,6 @@ Educational platform for basketball training.
 - Node.js (v18 or higher)
 - npm or yarn package manager
 
-### Installation
-
-
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/portofolio.git
-   cd portofolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the portfolio.
-
-### Build for Production
-
-```bash
-npm run build
-npm start
-```
 
 ## 📁 Project Structure
 
@@ -133,27 +100,6 @@ portofolio/
 - **Project Showcase** - Detailed project presentations
 - **Multi-language Support** - International accessibility
 
-## 🔧 Customization
-
-### Adding New Projects
-1. Update `assets/assets.js` with project details
-2. Add project images to `public/` directory
-3. Update the Projects component if needed
-
-### Styling
-- Global styles: `app/globals.css`
-- Tailwind configuration: `tailwind.config.mjs`
-- Component-specific styles: Inline or CSS modules
-
-## 📧 Contact
-
-- **Email:** [Your Email]
-- **LinkedIn:** [Your LinkedIn Profile]
-- **GitHub:** [Your GitHub Profile]
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
