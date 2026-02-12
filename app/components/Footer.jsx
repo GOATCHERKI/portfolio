@@ -71,7 +71,7 @@ const Footer = () => {
             style={footerStyles.border}
             className='text-center sm:flex items-center justify-between border-t mx-[10%] mt-12 py-6'
         >
-            <p style={footerStyles.text}>© 2025 Mohamed Zakaria Cherki. all rights reserved</p>
+            <p style={footerStyles.text}>© 2026 Mohamed Zakaria Cherki. all rights reserved</p>
             <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
                 <li>
                     <a 
