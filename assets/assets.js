@@ -103,6 +103,7 @@ export const workData = [
       "/work-3-7.png",
       "/work-3-8.png",
     ],
+    githubLink: "https://github.com/GOATCHERKI/Clinic_management",
   },
   {
     title: "Chat App",
