@@ -29,6 +29,7 @@ import sql from "./sql.svg";
 import DeskTop from "./DeskTop.png";
 import language from "./language.png";
 import language_dark from "./language_dark.jpg";
+import ankageo from "./anka.png";
 
 export const assets = {
   user_image,
@@ -58,6 +59,7 @@ export const assets = {
   DeskTop,
   language,
   language_dark,
+  ankageo,
 };
 
 export const workData = [
@@ -201,8 +203,14 @@ export const experienceData = [
   },
   {
     icon: assets.web_icon,
-    title: "AI and Cybersecurity Internship at EarTech Information Technology",
+    title: "Software Engineering Intern at EarTech IT",
     time: "August 2025 - October 2025",
+    description: "",
+  },
+  {
+    icon: assets.ankageo,
+    title: "Software Engineering Intern at Ankageo",
+    time: "February 2026 - Present",
     description: "",
   },
 ];
