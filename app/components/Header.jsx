@@ -227,11 +227,11 @@ const Header = () => {
               {/* Enhanced description with fade-in */}
               <div className="description-container">
                 <p className='description-text'>
-                  Final-year Software Engineering student passionate about building 
+                  Graduate Software Engineer passionate about building 
                   <span className="highlight"> real-world tech solutions </span>
                   and continuously improving my skills. Specialized in 
                   <span className="highlight"> full-stack development </span>
-                  and mobile app design, enthusiast about <span className="highlight">AI and cybersecurity.</span>
+                  and mobile app design, enthusiastic about <span className="highlight">AI and cybersecurity.</span>
                 </p>
                
                 {/* Social links with staggered animation */}

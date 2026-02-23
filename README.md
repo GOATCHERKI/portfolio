@@ -1,6 +1,6 @@
 # 🚀 Mohamed Zakaria Cherki - Portfolio
 
-Welcome to my personal portfolio website! I'm a final-year Software Engineering student passionate about building real-world tech solutions and continuously improving my skills.
+Welcome to my personal portfolio website! I'm a Graduate Software Engineer passionate about building real-world tech solutions and continuously improving my skills.
 
 ## ✨ Live Demo
 
@@ -8,7 +8,7 @@ Welcome to my personal portfolio website! I'm a final-year Software Engineering 
 
 ## 🎯 About Me
 
-I'm a Software Engineering student at Altinbaş University with a passion for full-stack development and emerging technologies. Currently interning in AI and Cybersecurity, I love creating practical applications that solve real-world problems.
+I'm a Software Engineering graduate from Altinbaş University with a passion for full-stack development and emerging technologies. Currently interning in AI and Cybersecurity, I love creating practical applications that solve real-world problems.
 
 ## 🛠️ Tech Stack
 

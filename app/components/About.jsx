@@ -140,10 +140,10 @@ const About = () => {
                     animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                 >
-                    I'm a final-year Software Engineering student,
+                    I'm a Graduate Software Engineer,
                      passionate about building real-world tech solutions and continuously improving my skills.
                       With a background in full-stack web development and mobile app design, 
-                      I've worked on various projects from Management systems and booking systems to real-time chat apps and basketball-themed platforms.
+                      I've worked on various projects from management and booking systems to real-time chat apps and basketball-themed platforms.
                 </p>
 
                 <ul className='grid grid-cols-1 gap-6 max-w-2xl justify-center md:grid-cols-2 lg:grid-cols-3'>
