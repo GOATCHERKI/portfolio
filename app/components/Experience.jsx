@@ -130,11 +130,15 @@ const Experience = () => {
       transition: 'all 0.3s ease',
     },
     timelineLineBase: {
-      background: isDark ? 'linear-gradient(to bottom, #475569, #64748b)' : 'linear-gradient(to bottom, #e5e7eb, #d1d5db)',
+      background: isDark 
+        ? 'linear-gradient(to bottom, #1e293b, #0f172a)' 
+        : 'linear-gradient(to bottom, #e5e7eb, #d1d5db)',
       transition: 'background 0.3s ease',
     },
     timelineLineProgress: {
-      background: isDark ? 'linear-gradient(to bottom, #000000, #14213d)' : 'linear-gradient(to bottom, #ffffff, #e5e5e5)',
+      background: isDark 
+        ? 'linear-gradient(to bottom, #6366f1, #22d3ee)' 
+        : 'linear-gradient(to bottom, #4f46e5, #22c55e)',
     },
     timelineDot: {
       backgroundColor: isDark ? '#ffffff' : '#000000',
@@ -147,7 +151,7 @@ const Experience = () => {
     <div 
       id='experience' 
       ref={sectionRef}
-      className='w-full px-[12%] mb-10 xl:mt-0 lg:mt-0 scroll-mt-20 snap-section'
+      className='w-full px-[10%] py-16 mb-10 xl:mt-0 lg:mt-0 scroll-mt-20 snap-section'
     >
       {/* Animated Header */}
       <div className={`transition-all duration-1000 transform ${
@@ -155,13 +159,14 @@ const Experience = () => {
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-10'
       }`}>
-        <h4 style={experienceStyles.text} className='text-center mb-2 text-lg font-mozilla-headline font-light'>My Career</h4>
-        <h2 style={experienceStyles.text} className='text-center text-5xl font-mozilla-headline font-medium mb-16'>
+        <h4 style={experienceStyles.text} className='text-center mb-2 text-lg font-mozilla-headline font-light'>My journey</h4>
+        <h2 style={experienceStyles.text} className='text-center text-4xl sm:text-5xl font-mozilla-headline font-medium mb-6'>
           Experience and Education
         </h2>
+        <div className="h-1 w-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400 dark:from-indigo-400 dark:via-sky-300 dark:to-emerald-300" />
         
-        <p style={experienceStyles.text} className='text-center max-w-2xl mx-auto mt-5 mb-12 font-mozilla-text'>
-          I am a Software Engineer graduated from Altinbas University, with experience in web development, and interest in AI & Cybersecurity.
+        <p style={experienceStyles.text} className='text-center max-w-2xl mx-auto mt-2 mb-12 font-mozilla-text text-sm sm:text-base leading-relaxed opacity-90'>
+          A snapshot of my academic background and real-world software engineering experience, from university to industry.
         </p>
       </div>
 
@@ -206,6 +211,7 @@ const Experience = () => {
                 <div 
                   style={experienceStyles.card}
                   className={`p-6 rounded-xl shadow-md border w-[45%] xl:w-[45%] 
+                            bg-white/95 dark:bg-slate-900/85
                             transform transition-all duration-500 
                             hover:scale-105 hover:shadow-xl hover:-translate-y-1
                             timeline-item-content group`}

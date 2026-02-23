@@ -70,9 +70,9 @@ const cardVariants = {
 
 
   return (
-    <motion.div id="projects" className='w-full px-[12%] py-10 scroll-mt-20 snap-section'>
+    <motion.div id="projects" className='w-full px-[10%] py-16 scroll-mt-20 snap-section relative'>
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 max-w-3xl mx-auto">
         <h4 style={projectStyles.text} className="mb-2 text-lg font-mozilla-headline font-light">My portfolio</h4>
         <motion.h2
           style={projectStyles.text}
@@ -84,17 +84,18 @@ const cardVariants = {
         >
           My latest projects
         </motion.h2>
-        <p style={projectStyles.text} className="max-w-2xl mx-auto font-mozilla-text">
+        <div className="h-1 w-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400 dark:from-indigo-400 dark:via-sky-300 dark:to-emerald-300" />
+        <p style={projectStyles.text} className="max-w-2xl mx-auto font-mozilla-text text-sm sm:text-base leading-relaxed opacity-90">
           Welcome to my portfolio! Explore a collection of projects showcasing my expertise in full-stack web development.
         </p>
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-10 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-12 gap-6 md:gap-7">
         {workData.slice(0, visibleCount).map((project, index) => (
           <motion.div
             key={index}
-            className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg border-1 border-gray-500 relative cursor-pointer group overflow-hidden hover:shadow-xl'
+            className='aspect-[4/5] bg-no-repeat bg-cover bg-center rounded-2xl border border-zinc-200/70 dark:border-zinc-700/70 relative cursor-pointer group overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out'
             style={{ backgroundImage: `url(${project.bgImage})` }}
             variants={cardVariants}
             initial="hidden"
@@ -107,7 +108,8 @@ const cardVariants = {
             whileTap={{ scale: 0.95 }}
             onClick={() => openModal(project)}
           >
-        
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5 dark:from-black/85 dark:via-black/40 dark:to-black/20 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+
             <motion.div 
               style={{
                 background: 'rgba(40,40,40,0.3)',
@@ -115,7 +117,7 @@ const cardVariants = {
                 backdropFilter: 'blur(8px)',
                 transition: 'all 0.3s ease',
               }}
-              className='w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between shadow-lg z-20'
+              className='w-11/12 sm:w-10/12 rounded-xl absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 py-3.5 px-4 sm:px-5 flex items-center justify-between shadow-lg z-20'
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -125,7 +127,7 @@ const cardVariants = {
               <div className="flex-1">
                 <motion.h2 
                   style={{ color: '#fff', transition: 'color 0.3s ease' }} 
-                  className='font-semibold mb-1'
+                  className='font-semibold mb-1 text-sm sm:text-base md:text-lg tracking-tight'
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
@@ -136,9 +138,9 @@ const cardVariants = {
                 </motion.h2>
               </div>
               <div 
-                className='arrow-container border rounded-full w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-white/20 transition-transform duration-300 z-20'
+                className='arrow-container border border-white/40 rounded-full w-9 aspect-square flex items-center justify-center shadow-[0_10px_25px_rgba(0,0,0,0.45)] bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 z-20'
               >
-                <Image src={assets.send_icon} alt='' className='w-5 transition-transform duration-300 group-hover:rotate-45' />
+                <Image src={assets.send_icon} alt='' className='w-5 transition-transform duration-300 group-hover:rotate-45 drop-shadow' />
               </div>
             </motion.div>
           </motion.div>
@@ -149,7 +151,7 @@ const cardVariants = {
       {workData.length > 4 && visibleCount < workData.length && (
         <div className="flex justify-center items-center col-span-full">
           <button
-            className="px-6 py-2 mt-5 border-1 rounded-full bg-black text-white font-semibold hover:bg-gray-900 transition"
+            className="px-6 py-2 mt-5 rounded-full font-semibold text-sm tracking-wide border border-zinc-900/10 dark:border-zinc-500/60 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             onClick={() => setVisibleCount(workData.length)}
           >
             Show More
@@ -161,7 +163,7 @@ const cardVariants = {
       {workData.length > 4 && visibleCount === workData.length && (
         <div className="flex justify-center items-center col-span-full">
           <button
-            className="px-6 py-2 mt-5 border-1 rounded-full bg-black text-white font-semibold hover:bg-gray-900 transition"
+            className="px-6 py-2 mt-5 rounded-full font-semibold text-sm tracking-wide border border-zinc-900/10 dark:border-zinc-500/60 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             onClick={() => setVisibleCount(4)}
           >
             Show Less
@@ -176,8 +178,8 @@ const cardVariants = {
           onClick={closeModal}
         >
           <motion.div
-            className={`rounded-xl w-full max-w-4xl p-8 relative shadow-xl overflow-y-auto max-h-[80vh] sm:max-h-[85vh] md:max-h-[90vh] mt-4 md:mt-0 ${
-              isDark ? 'bg-gray-800' : 'bg-white'
+            className={`rounded-2xl w-full max-w-4xl p-6 sm:p-8 relative shadow-2xl overflow-y-auto max-h-[80vh] sm:max-h-[85vh] md:max-h-[90vh] mt-4 md:mt-0 border ${
+              isDark ? 'bg-zinc-900/90 border-zinc-700/70' : 'bg-white/95 border-zinc-200/80'
             }`}
             onClick={(e) => e.stopPropagation()}
             initial={{ scale: 0.8, opacity: 0 }}
@@ -195,7 +197,7 @@ const cardVariants = {
               ×
             </button>
 
-            <h2 className="text-3xl font-semibold mb-6" style={projectStyles.text}>
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 tracking-tight" style={projectStyles.text}>
               {selectedProject.title}
             </h2>
 
@@ -204,7 +206,7 @@ const cardVariants = {
               {selectedProject.images && selectedProject.images.length > 0 && (
                 <div className="relative">
                   {/* Main Image Display */}
-                  <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-100">
+                  <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-700/70">
                     <Image
                       src={selectedProject.images[currentImageIndex]}
                       alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
@@ -274,7 +276,7 @@ const cardVariants = {
             </div>
 
             {/* Project Description */}
-            <div className="mb-6 space-y-2">
+            <div className="mb-6 space-y-2 text-sm sm:text-base leading-relaxed">
               {Array.isArray(selectedProject.description) 
                 ? selectedProject.description.map((line, i) => (
                   <p key={i} style={projectStyles.text}>{line}</p>
@@ -283,34 +285,37 @@ const cardVariants = {
               }
             </div>
 
-            {/* GitHub Link */}
-            {selectedProject.githubLink && (
-              <a
-                href={selectedProject.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-block px-6 py-2 rounded-full border transition-colors ${
-                  isDark
-                    ? 'border-gray-200 text-gray-200 hover:bg-gray-700'
-                    : 'border-gray-700 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                View on GitHub
-              </a>
-            )}
-            {selectedProject.liveDemo && (
-              <a
-                href={selectedProject.liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-block px-6 py-2 rounded-full border transition-colors ${
-                  isDark
-                    ? 'border-gray-200 text-gray-200 hover:bg-gray-700'
-                    : 'border-gray-700 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                View Live Demo
-              </a>
+            {(selectedProject.githubLink || selectedProject.liveDemo) && (
+              <div className="flex flex-wrap items-center gap-3 mt-2">
+                {selectedProject.liveDemo && (
+                  <a
+                    href={selectedProject.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium shadow-md transition-colors ${
+                      isDark
+                        ? 'bg-gradient-to-r from-indigo-500 to-sky-400 text-white hover:from-indigo-400 hover:to-sky-300'
+                        : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                    }`}
+                  >
+                    View live demo
+                  </a>
+                )}
+                {selectedProject.githubLink && (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium border transition-colors ${
+                      isDark
+                        ? 'border-zinc-500 text-zinc-100 hover:bg-zinc-800/60'
+                        : 'border-zinc-800 text-zinc-800 hover:bg-zinc-100'
+                    }`}
+                  >
+                    View on GitHub
+                  </a>
+                )}
+              </div>
             )}
           </motion.div>
         </div>
