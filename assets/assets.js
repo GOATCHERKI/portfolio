@@ -151,7 +151,7 @@ export const workData = [
       "/work-car-5.png",
       "/work-car-6.png",
     ],
-    githubLink: "https://github.com/yourusername/car_rental",
+    githubLink: "https://github.com/GOATCHERKI/car_rental",
     liveDemo: "https://car-rental-jade-rho.vercel.app/",
   },
   {
