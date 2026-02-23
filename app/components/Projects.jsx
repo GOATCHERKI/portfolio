@@ -298,6 +298,20 @@ const cardVariants = {
                 View on GitHub
               </a>
             )}
+            {selectedProject.liveDemo && (
+              <a
+                href={selectedProject.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-block px-6 py-2 rounded-full border transition-colors ${
+                  isDark
+                    ? 'border-gray-200 text-gray-200 hover:bg-gray-700'
+                    : 'border-gray-700 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                View Live Demo
+              </a>
+            )}
           </motion.div>
         </div>
       )}

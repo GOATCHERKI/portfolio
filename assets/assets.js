@@ -104,6 +104,7 @@ export const workData = [
       "/work-3-8.png",
     ],
     githubLink: "https://github.com/GOATCHERKI/Clinic_management",
+    liveDemo: "https://smart-clinic-eta.vercel.app/",
   },
   {
     title: "Chat App",
