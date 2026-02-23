@@ -187,7 +187,13 @@ const About = () => {
         <div className={`flex flex-col items-center  transition-all duration-1000 delay-700 ${
           animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="35"></img>
+          <img 
+            src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" 
+            width="45" 
+            height="45" 
+            alt="Tech stack animation"
+            className="mb-3"
+          />
           <h2 style={aboutStyles.text} className='text-center text-3xl font-mozilla-headline font-medium mb-8'>Tech Stack</h2>
           
           <div style={{ height: '200px', position: 'relative', overflow: 'hidden', width: '100%', maxWidth: '1200px' }}>
