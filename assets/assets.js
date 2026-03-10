@@ -291,6 +291,7 @@ export const workData = [
       "/work-4-3.png",
       "/work-4-1.png",
     ],
+    liveDemo: "https://basketball-lab.netlify.app/",
     githubLink: "https://github.com/GOATCHERKI/Basketball-Lab",
   },
 ];
