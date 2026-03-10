@@ -108,7 +108,7 @@ export const workData = [
   },{
     title: "Project Management Platform",
     description: [
-      "ProjectFlow: A modern full-stack collaboration platform for teams to plan projects, manage tasks, and coordinate workspaces, built with React, Node.js, Prisma, and PostgreSQL.",
+      "A modern full-stack collaboration platform for teams to plan projects, manage tasks, and coordinate workspaces, built with React, Node.js, Prisma, and PostgreSQL.",
       "Tech Stack:",
       "- React 19: Interactive dashboard UI for workspace, project, and task management.",
       "- Vite: Fast frontend dev/build pipeline.",
